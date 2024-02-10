@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.class-de-tarefas {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(218, 218, 218, 0.788);
+    
+    text-shadow: 6px 2px 6px black;
+    padding: 15 px;
+    border: rgb(77, 101, 109) 2px solid;
+    border-radius: 10px;
+}
+
+
+.class-de-botao {
+    padding: 10px;
+    border: rgb(14, 33, 39) 1px solid;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#novaTarefa {
+    border-radius: 10px;
+}
+
+#novaRotina {
+    border-radius: 10px;
+}
+
+#resetRotina {
+    border-radius: 10px;
+}
