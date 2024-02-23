@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"  href="./todo.css">
+    <link rel="stylesheet" href="todo2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Todo</title>
 </head>
+<div class="text-block">
 <body>
+    
     <h1>ROTINA</h1>
     <h4>Sexta</h4>
     <!-- deve ser possivel criar e modificar as tarefas -->
@@ -19,7 +25,7 @@
         <label id="ltarefa2">Escovar os dentes <br></label>
         
         
-        <input id="tarefa3" class = "tipodetarefa" type="checkbox"></input>
+        <input id="tarefa3" type="checkbox"></input>
         <label id="ltarefa3">Estudar CSS <br></label>
         
         
@@ -39,30 +45,11 @@
         <button id = "novaRotina">Nova Rotina</button>
 
         <!-- fazer um botão de reset-->
-        <button id = "resetRotina" onclick="funcao()">Reset</button>
-    </div>
-    
+        <button id = "resetRotina">Reset</button>
+        </div>
+        </div>
 
     <script src="./todo.js"></script>
-    <script src="./reset.js"></script>
-    <script> 
-    function funcao(){
-        for(var i = 1; i <= 5; i++){
-            const element = document.getElementById(`${"tarefa"+i}`);
-            const element2 = document.getElementById(`${"ltarefa"+i}`)
-            ///const element = document.getElementById("div-de-tarefas")
-            element.remove();
-            element2.remove();
-        }
-
-// IMPORTANTE: precisa dar um jeito de aumentar o numero "maximo" do loop for, (que agora é 5 pq são 5 tarefas), cada vez que criar uma tarefa nova)
-
-
-    }
-    ///const element = document.getElementById(`${"tarefa"+i}`);
-        
-        
-        </script>
-
+    </div>
 </body>
 </html>
