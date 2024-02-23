@@ -19,7 +19,7 @@
         <label id="ltarefa2">Escovar os dentes <br></label>
         
         
-        <input id="tarefa3" class = "tipodetarefa" type="checkbox"></input>
+        <input id="tarefa3" type="checkbox"></input>
         <label id="ltarefa3">Estudar CSS <br></label>
         
         
@@ -39,30 +39,10 @@
         <button id = "novaRotina">Nova Rotina</button>
 
         <!-- fazer um botão de reset-->
-        <button id = "resetRotina" onclick="funcao()">Reset</button>
+        <button id = "resetRotina">Reset</button>
     </div>
     
 
     <script src="./todo.js"></script>
-    <script src="./reset.js"></script>
-    <script> 
-    function funcao(){
-        for(var i = 1; i <= 5; i++){
-            const element = document.getElementById(`${"tarefa"+i}`);
-            const element2 = document.getElementById(`${"ltarefa"+i}`)
-            ///const element = document.getElementById("div-de-tarefas")
-            element.remove();
-            element2.remove();
-        }
-
-// IMPORTANTE: precisa dar um jeito de aumentar o numero "maximo" do loop for, (que agora é 5 pq são 5 tarefas), cada vez que criar uma tarefa nova)
-
-
-    }
-    ///const element = document.getElementById(`${"tarefa"+i}`);
-        
-        
-        </script>
-
 </body>
 </html>
