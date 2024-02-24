@@ -50,7 +50,7 @@ function limitadorDeTarefas(){
         let limitador = document.getElementById("teste-botao").addEventListener("click", criarTarefa);
         
     }else{
-        alert("Você só pode criar uma tarefa de cada vez!!!")
+        alert("Você só pode criar uma tarefa de cada vez!!!!!!!")
     }
     
 }
