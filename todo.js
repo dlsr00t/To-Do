@@ -103,7 +103,7 @@ function criarId(){
 
 
 function limitadorDeTarefas(){
-    
+    //! CRIAR UM CÓDIGO QUE IMPEÇA DE TAREFAS SEM TEXTO SEJAM CRIADAS
     if (document.getElementById("botao-criar") == null){
         novaTarefa()
         let limitador = document.getElementById("botao-criar").addEventListener("click", criarTarefa);
@@ -117,3 +117,4 @@ function limitadorDeTarefas(){
 document.getElementById("novaTarefa").addEventListener("click", limitadorDeTarefas);
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
 var contadorNovaTarefa2 = 1;
+
