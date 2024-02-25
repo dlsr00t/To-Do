@@ -9,9 +9,9 @@ function novaTarefa(){
         
 
         let criarNovaTarefa = document.createElement("input");
-        criarNovaTarefa.id = "nova-tarefa1" //*Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
+        criarNovaTarefa.id = "nova-tarefa1" //TODO Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
         // var criarNovaTarefa = document.createElement("input");
-        // criarNovaTarefa.id = "nova-tarefa" //*Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
+        // criarNovaTarefa.id = "nova-tarefa" //TODO Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
         
 
         let teste = document.getElementById("nova-tarefa1");
@@ -26,7 +26,7 @@ function novaTarefa(){
         //limitadorDeTarefas()
         //console.log(document.getElementById("asdf"))
 
-    }else{
+    }else{//*ISSO ATRIBUI UM ID NOVO A CADA TAREFA CRIADA
         var contadorNovaTarefa = 2;
         while(document.getElementById("nova-tarefa1") != null){
             if(document.getElementById(`nova-tarefa${contadorNovaTarefa}`) == null){
@@ -54,7 +54,7 @@ function novaTarefa(){
     }
     /*
     var criarNovaTarefa = document.createElement("input");
-    criarNovaTarefa.id = "nova-tarefa" //*Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
+    criarNovaTarefa.id = "nova-tarefa" //TODO Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
     
 
     let teste = document.getElementById("nova-tarefa");
@@ -76,20 +76,27 @@ function criarTarefa(){
     
 
     let label = document.createElement("label"); 
-    label.innerText = document.getElementById(`nova-tarefa${contadorNovaTarefa2}`).value; //! LINHA DE CODIGO PROBLEMATICA
-    
+    label.innerText = document.getElementById(`nova-tarefa${contadorNovaTarefa2}`).value;
+    console.log(`conteudo da variavel label.innerText: ${label.innerText}`)
+    console.log(`conteudo da variavel label.innerText é vazio? ${label.innerText == "" ? true : false}`)
     let removerBotao = document.getElementById("botao-criar");
 
     let quebrarUmaLinha = document.createElement("br");
 
     let adicionarNaDiv2 = document.getElementById("div-de-tarefas");
-    adicionarNaDiv2.removeChild(removerBotao);
-    adicionarNaDiv2.appendChild(label);
-    adicionarNaDiv2.appendChild(quebrarUmaLinha);
-    document.getElementById(`nova-tarefa${contadorNovaTarefa2}`).type = "checkbox"; //! LINHA DE CODIGO PROBLEMATICA
-    contadorNovaTarefa2+=1;
-    console.log(contadorNovaTarefa2)
-    return "proximo"
+    
+    if(label.innerText != ""){//*ISSO IMPEDE QUE TAREFAS VAZIAS SEJAM CRIADAS
+        adicionarNaDiv2.removeChild(removerBotao);
+        adicionarNaDiv2.appendChild(label);
+        adicionarNaDiv2.appendChild(quebrarUmaLinha);
+        document.getElementById(`nova-tarefa${contadorNovaTarefa2}`).type = "checkbox"; 
+        contadorNovaTarefa2+=1;
+        console.log(contadorNovaTarefa2)
+        return "proximo" 
+    }else{
+        alert("Você não pode criar tarefas vazias!")
+    }
+
     
 
 }
@@ -103,10 +110,9 @@ function criarId(){
 
 
 function limitadorDeTarefas(){
-    //! CRIAR UM CÓDIGO QUE IMPEÇA DE TAREFAS SEM TEXTO SEJAM CRIADAS
     if (document.getElementById("botao-criar") == null){
         novaTarefa()
-        let limitador = document.getElementById("botao-criar").addEventListener("click", criarTarefa);
+        document.getElementById("botao-criar").addEventListener("click", criarTarefa);
         
     }else{
         alert("Você só pode criar uma tarefa de cada vez!!!")
