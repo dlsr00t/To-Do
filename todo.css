@@ -1,3 +1,19 @@
+input {
+    cursor: pointer;
+}
+
+h4{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin:10px;
+  }
+
+  h1{
+    font-weight: 100;
+    margin: 10px;
+  }
+  
 body {
     background-color: black;
     color: whitesmoke;
@@ -6,18 +22,44 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-
+    margin-top: 300px;
+    opacity: 0;
+    animation: fadeInText 0s 1.1s both;
 }
 
+@keyframes fadeInText {
+    from {
+         opacity:0;
+        }
+        to { 
+        opacity: 1;}
+}
+@keyframes revealBlock {
+    from {
+        transform: translateX(0);
+    }
+  to {
+        transform: translateX(100%);
+}
+}
+@keyframes enlargeBlock {
+    from{
+        widht: 0%;
+    }
+    to{
+        widht: 100%;
+    }
+}
+
+        
+
 .class-de-tarefas {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:  "Quicksand", sans-serif;
     background-color: rgba(218, 218, 218, 0.788);
-    
-    text-shadow: 6px 2px 6px black;
-    padding: 15 px;
-    border: rgb(77, 101, 109) 2px solid;
+    padding: 5px;
+    border: none;
     border-radius: 10px;
+
 }
 
 
@@ -26,16 +68,69 @@ body {
     border: rgb(14, 33, 39) 1px solid;
     border-radius: 5px;
     margin: 10px;
+    border: none;
 }
 
+.text-block {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-block:after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: translateX(-100%);
+    animation: enlargeBlock .5s .6s both, revealBlock .5s 1.1s both;
+}
 #novaTarefa {
     border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--cor-primaria);
 }
 
 #novaRotina {
     border-radius: 10px;
+    background-color: var(--cor-primaria);
+    cursor: pointer;
+}
+
+#teste-botao {
+    background-color: var(--cor-primaria);
+    cursor: pointer;
+    border-radius: 8px;
+    border:none;
 }
 
 #resetRotina {
-    border-radius: 10px;
+    background-color: var(--cor-primaria);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#novaTarefa:hover {
+    background-color: var(--cor-secundaria);
+}
+
+#novaRotina:hover {
+    background-color: var(--cor-secundaria);
+}
+
+#resetRotina:hover {
+    background-color: var(--cor-secundaria);
+}
+#teste-botao:hover {
+    background-color: var(--cor-secundaria);
+}
+
+#teste {
+    text-decoration: none;
+    cursor: text;
+    outline: 0;
+    border: 1px black solid;
+    border-radius: 3px;
 }

@@ -1,5 +1,6 @@
 function novaTarefa(){
 
+
     if (document.getElementById("nova-tarefa1") == null){
 
         let botaoCriar = document.createElement("button");
