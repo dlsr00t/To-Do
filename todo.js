@@ -76,7 +76,7 @@ function novaTarefa(){
 function criarTarefa(){
     //console.log(document.getElementById("nova-tarefa").value
     
-
+    console.log(contadorNovaTarefa2)
     let label = document.createElement("label"); 
     label.innerText = document.getElementById(`nova-tarefa${contadorNovaTarefa2}`).value;
     /*
@@ -117,12 +117,22 @@ function funcaoReset(){
         console.log(element2);
         element.remove();
         element2.remove();
-        i += 1;
+        i++;
     }
+    let i2 = 1;
+    while(document.getElementById(`nova-tarefa${i2}`) != null){
+        let element = document.getElementById(`nova-tarefa${i2}`);
+        //let element2 = document.getElementById(`nova-tarefa${i2}`);
+        element.remove();
+        i2++;
+    }
+    
+    var contadorNovaTarefa2 = 1;
+    
 }
 
 function addIdLabel(){
-    //TODO Eu preciso fazer os novos labels que são criados terem id pois eles não tem.
+
 }
 
 function limitadorDeTarefas(){
@@ -139,9 +149,7 @@ function limitadorDeTarefas(){
 document.getElementById("novaTarefa").addEventListener("click", limitadorDeTarefas);
 document.getElementById("resetRotina").addEventListener("click", funcaoReset);
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
-let contadorNovaTarefa2 = 1;
-
-//TODO Eu preciso padronizar os IDs dos inputs pq os inputs criados não tem o mesmo padrão dos já existentes.
+var contadorNovaTarefa2 = 1;
 
 //TODO Eu preciso fazer os novos labels que são criados terem id pois eles não tem.
 
