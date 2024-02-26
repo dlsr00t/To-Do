@@ -5,7 +5,7 @@ function novaTarefa(){
 
         let botaoCriar = document.createElement("button");
         botaoCriar.id = "botao-criar";
-        let textoBotaoCriar = document.createTextNode("criar");
+        let textoBotaoCriar = document.createTextNode("Criar");
         botaoCriar.appendChild(textoBotaoCriar);
         
 
