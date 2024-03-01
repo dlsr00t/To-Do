@@ -151,6 +151,20 @@ document.getElementById("resetRotina").addEventListener("click", funcaoReset);
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
 var contadorNovaTarefa2 = 1;
 
+
+
+document.addEventListener("keypress", function(e) {
+
+    if (e.key === "Enter") {
+
+        const btn = document.querySelector("#botao-criar");
+
+        btn.click();
+    }
+
+}
+);
+
 //TODO Eu preciso fazer os novos labels que são criados terem id pois eles não tem.
 
 //TODO Eu preciso refatorar o código da função novaTarefa(), tá muito bagunçado.
