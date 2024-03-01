@@ -121,17 +121,33 @@ function funcaoReset(){
     }
     let i2 = 1;
     while(document.getElementById(`nova-tarefa${i2}`) != null){
-        let element = document.getElementById(`nova-tarefa${i2}`);
+        let element3 = document.getElementById(`nova-tarefa${i2}`);
+
         //let element2 = document.getElementById(`nova-tarefa${i2}`);
-        element.remove();
+        element3.remove();
         i2++;
     }
     
     var contadorNovaTarefa2 = 1;
     
+    
+    // let slaa = document.getElementsByTagName("label");
+    // console.log(slaa)
+    // slaa.remove();
+
 }
 
-function addIdLabel(){
+function removeAllLabels(){
+    let labels = document.getElementsByTagName("label");
+    console.log(labels)
+    let nlabels = document.getElementsByTagName("label").length;
+    console.log(`Nlabels: ${nlabels}`)
+    for(let i = 0; i<=nlabels; i++){
+        //labels[i].remove();
+        console.log(labels[i])
+    }
+
+    // labels.remove()
 
 }
 
@@ -139,7 +155,7 @@ function limitadorDeTarefas(){
     if (document.getElementById("botao-criar") == null){
         novaTarefa()
         document.getElementById("botao-criar").addEventListener("click", criarTarefa);
-        
+        removeAllLabels()
     }else{
         alert("Você só pode criar uma tarefa de cada vez!!!")
     }
