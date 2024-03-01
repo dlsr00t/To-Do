@@ -78,6 +78,7 @@ function criarTarefa(){
     
     console.log(contadorNovaTarefa2)
     let label = document.createElement("label"); 
+    // label.id = `ltarefa${contarLabel}`
     label.innerText = document.getElementById(`nova-tarefa${contadorNovaTarefa2}`).value;
     /*
     console.log(`conteudo da variavel label.innerText: ${label.innerText}`)
@@ -113,8 +114,8 @@ function funcaoReset(){
     while(document.getElementById(`tarefa${i}`) != null){
         let element = document.getElementById(`tarefa${i}`);
         let element2 = document.getElementById(`ltarefa${i}`);
-        console.log(element);
-        console.log(element2);
+        // console.log(element);
+        // console.log(element2);
         element.remove();
         element2.remove();
         i++;
@@ -136,26 +137,28 @@ function funcaoReset(){
     // slaa.remove();
 
 }
+ //!DESCOMENTAR SE SEGUNDA FORMA DER ERRADO.
+// function removeAllLabels(){
+//     let labels = document.getElementsByTagName("label");
+//     console.log(labels)
+//     let nlabels = document.getElementsByTagName("label").length;
+//     console.log(`Nlabels: ${nlabels}`)
+//     for(let i = 0; i<=nlabels; i++){
+//         labels[i].remove();
+//         // console.log(labels[i])
+//     }
+    
 
-function removeAllLabels(){
-    let labels = document.getElementsByTagName("label");
-    console.log(labels)
-    let nlabels = document.getElementsByTagName("label").length;
-    console.log(`Nlabels: ${nlabels}`)
-    for(let i = 0; i<=nlabels; i++){
-        //labels[i].remove();
-        console.log(labels[i])
-    }
+//     // labels.remove()
 
-    // labels.remove()
+// }
 
-}
 
 function limitadorDeTarefas(){
     if (document.getElementById("botao-criar") == null){
         novaTarefa()
         document.getElementById("botao-criar").addEventListener("click", criarTarefa);
-        removeAllLabels()
+        // removeAllLabels()
     }else{
         alert("Você só pode criar uma tarefa de cada vez!!!")
     }
@@ -164,9 +167,10 @@ function limitadorDeTarefas(){
 
 document.getElementById("novaTarefa").addEventListener("click", limitadorDeTarefas);
 document.getElementById("resetRotina").addEventListener("click", funcaoReset);
+//!DESCOMENTAR SE SEGUNDA FORMA DER ERRADO.  document.getElementById("resetRotina").addEventListener("click", removeAllLabels);
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
 var contadorNovaTarefa2 = 1;
-
+var contarLabel = 1;
 
 
 document.addEventListener("keypress", function(e) {
@@ -180,6 +184,7 @@ document.addEventListener("keypress", function(e) {
 
 }
 );
+
 
 //TODO Eu preciso fazer os novos labels que são criados terem id pois eles não tem.
 
