@@ -1,3 +1,40 @@
+var dia = 6;
+
+
+function hoje (){
+    if (dia===6){
+       dia++
+        return "sabado "
+
+    }
+    if (dia===7){
+       dia++
+       dia = 1
+       return "domingo"      
+    }
+
+    if (dia===1){
+       dia++
+       return "segunda "
+    }
+    if (dia===2){
+       dia++
+       return "terça"
+    }
+    if (dia===3){
+       dia++
+       return "quarta"
+    }
+    if (dia===4){
+        dia++
+        return "quinta"
+    }
+    if (dia===5){
+        dia++
+        return "sexta"
+    }
+}
+
 function novaTarefa(){
 
 
@@ -119,9 +156,26 @@ function limitadorDeTarefas(){
         alert("Você só pode criar uma tarefa de cada vez!!!!!!!")
     }
     
+
 }
 
 document.getElementById("novaTarefa").addEventListener("click", limitadorDeTarefas);
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
 var contadorNovaTarefa2 = 1;
+
+function novaRotina(){
+let h1 = document.createElement("H1");
+h1.innerHTML = "rotina";
+document.body.appendChild(h1)
+let h4 = document.createElement("H4");
+h4.innerHTML = hoje();
+document.body.appendChild(h4)
+let checkBox = document.createElement("input");
+checkBox.setAttribute("type","checkbox");
+document.body.appendChild(checkBox);
+
+}
+
+let novaRotina1 = document.getElementById("novaRotina").addEventListener("click",novaRotina)
+
 
