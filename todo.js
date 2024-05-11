@@ -53,6 +53,16 @@ function novaTarefa(){
             }
         }
     }
+
+    document.getElementById(`nova-tarefa${contadorNovaTarefa2}`).addEventListener("keypress", function(event){
+        //console.log(event.KeyCode);
+        if(event.key == "Enter"){
+            document.getElementById("botao-criar").click()
+        }
+        //console.log("SOMETHING");
+        
+    });
+
     /*
     var criarNovaTarefa = document.createElement("input");
     criarNovaTarefa.id = "nova-tarefa" //TODO Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
@@ -85,7 +95,9 @@ function criarTarefa(){
     let quebrarUmaLinha = document.createElement("br");
 
     let adicionarNaDiv2 = document.getElementById("div-de-tarefas");
-    
+
+
+
     if(label.innerText != ""){//*ISSO IMPEDE QUE TAREFAS VAZIAS SEJAM CRIADAS
         adicionarNaDiv2.removeChild(removerBotao);
         adicionarNaDiv2.appendChild(label);
@@ -118,10 +130,30 @@ function limitadorDeTarefas(){
     }else{
         alert("Você só pode criar uma tarefa de cada vez!!!!!!!")
     }
+
+
+    
+    
     
 }
 
 document.getElementById("novaTarefa").addEventListener("click", limitadorDeTarefas);
+document.getElementById("resetRotina").addEventListener("click", reset)
+
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
 var contadorNovaTarefa2 = 1;
+
+
+function reset(){
+    let reset2 = document.getElementById("div-de-tarefas");
+    while(reset2.firstChild){
+        reset2.removeChild(reset2.firstChild);
+    }
+    /*
+    for(let c=1; c<5; c++){
+        reset2.removeChild(`tarefa${c}`);
+        reset2.removeChild(`ltarefa${c}`);
+    }
+    */
+}
 
