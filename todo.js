@@ -1,3 +1,6 @@
+//TODO não é possivel adicionar outras tarefas depois que o botao reset é clicado.
+
+
 function novaTarefa(){
 
 
@@ -10,7 +13,7 @@ function novaTarefa(){
         
 
         let criarNovaTarefa = document.createElement("input");
-        criarNovaTarefa.id = "nova-tarefa1" //TODO Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
+        criarNovaTarefa.id = "nova-tarefa1"   //TODO Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
         // var criarNovaTarefa = document.createElement("input");
         // criarNovaTarefa.id = "nova-tarefa" //TODO Eu preciso fazer a tarefa mudar de id, se não todas vão ter o mesmo id
         
